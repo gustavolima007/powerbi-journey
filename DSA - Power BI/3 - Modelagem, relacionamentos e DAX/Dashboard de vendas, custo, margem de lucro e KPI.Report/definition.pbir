@@ -1,0 +1,9 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Dashboard de vendas, custo, margem de lucro e KPI.SemanticModel"
+    },
+    "byConnection": null
+  }
+}

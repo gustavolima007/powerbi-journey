@@ -1,0 +1,42 @@
+table 'fat_Valor adicionado bruto total'
+	lineageTag: 55fabd4b-ec8b-4fa9-9c62-0a324b9fccab
+
+	column Ano
+		dataType: int64
+		formatString: 0
+		lineageTag: 58429707-6763-4d7d-b223-d201ac95909b
+		summarizeBy: none
+		sourceColumn: Ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Soma Anual'
+		dataType: double
+		lineageTag: 630850d1-7f03-43a2-8ad2-c8f7bc8ef9f0
+		summarizeBy: sum
+		sourceColumn: Soma Anual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'fat_Valor adicionado bruto total' = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\dioge\Documents\Aura Partner\ROX\Gravação Cursos\ROX SCHOOL\Power BI\Power BI - Intermediário\Datasets\base_de_dados_2010_2020_xls\PIB dos Municípios - base de dados 2010-2020.xls"), null, true),
+				    #"PIB dos Municípios1" = Fonte{[Name="PIB dos Municípios"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"PIB dos Municípios1", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Ano", Int64.Type}, {"Código da Grande Região", Int64.Type}, {"Nome da Grande Região", type text}, {"Código da Unidade da Federação", Int64.Type}, {"Sigla da Unidade da Federação", type text}, {"Nome da Unidade da Federação", type text}, {"Código do Município", Int64.Type}, {"Nome do Município", type text}, {"Região Metropolitana", type text}, {"Código da Mesorregião", Int64.Type}, {"Nome da Mesorregião", type text}, {"Código da Microrregião", Int64.Type}, {"Nome da Microrregião", type text}, {"Código da Região Geográfica Imediata", Int64.Type}, {"Nome da Região Geográfica Imediata", type text}, {"Município da Região Geográfica Imediata", type text}, {"Código da Região Geográfica Intermediária", Int64.Type}, {"Nome da Região Geográfica Intermediária", type text}, {"Município da Região Geográfica Intermediária", type text}, {"Código Concentração Urbana", Int64.Type}, {"Nome Concentração Urbana", type text}, {"Tipo Concentração Urbana", type text}, {"Código Arranjo Populacional", Int64.Type}, {"Nome Arranjo Populacional", type text}, {"Hierarquia Urbana", type text}, {"Hierarquia Urbana (principais categorias)", type text}, {"Código da Região Rural", Int64.Type}, {"Nome da Região Rural", type text}, {"Região rural (segundo classificação do núcleo)", type text}, {"Amazônia Legal", type text}, {"Semiárido", type text}, {"Cidade-Região de São Paulo", type text}, {"Valor adicionado bruto da Agropecuária, #(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Valor adicionado bruto da Indústria,#(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Valor adicionado bruto dos Serviços,#(lf)a preços correntes #(lf)- exceto Administração, defesa, educação e saúde públicas e seguridade social#(lf)(R$ 1.000)", Int64.Type}, {"Valor adicionado bruto da Administração, defesa, educação e saúde públicas e seguridade social, #(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Valor adicionado bruto total, #(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Impostos, líquidos de subsídios, sobre produtos, #(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Produto Interno Bruto, #(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Produto Interno Bruto per capita, #(lf)a preços correntes#(lf)(R$ 1,00)", type number}, {"Atividade com maior valor adicionado bruto", type text}, {"Atividade com segundo maior valor adicionado bruto", type text}, {"Atividade com terceiro maior valor adicionado bruto", type text}}),
+				    #"Erros Removidos" = Table.RemoveRowsWithErrors(#"Tipo Alterado", {"Valor adicionado bruto da Agropecuária, #(lf)a preços correntes#(lf)(R$ 1.000)"}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Erros Removidos", "dataAno", each #date([Ano],01,01)),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"dataAno", type date}}),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Tipo Alterado1", "analise 01", each if [Nome da Grande Região] = "Nordeste" and [Município da Região Geográfica Imediata] = "Polo" and [Município da Região Geográfica Intermediária] = "do Entorno" then "Analise 01 - OK" else "Não OK"),
+				    #"Linhas Agrupadas" = Table.Group(#"Coluna Condicional Adicionada", {"Ano"}, {{"Soma Anual", each List.Sum([#"Valor adicionado bruto total, #(lf)a preços correntes#(lf)(R$ 1.000)"]), type nullable number}})
+				in
+				    #"Linhas Agrupadas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

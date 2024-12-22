@@ -1,0 +1,47 @@
+table dim-Código_da_Unidade_da_Federação
+	lineageTag: 6b729ce9-b3c3-4f55-9854-ca137b67c5c7
+
+	column 'Código da Unidade da Federação'
+		dataType: int64
+		formatString: 0
+		lineageTag: 69356634-47b9-4b29-aaf0-e95d1d209de9
+		summarizeBy: none
+		sourceColumn: Código da Unidade da Federação
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sigla da Unidade da Federação'
+		dataType: string
+		lineageTag: eec63318-9fab-4e82-8332-41e1a5baec7b
+		summarizeBy: none
+		sourceColumn: Sigla da Unidade da Federação
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Unidade da Federação'
+		dataType: string
+		lineageTag: b5337361-0151-4e0d-8819-9800980e9b8e
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: Nome da Unidade da Federação
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim-Código_da_Unidade_da_Federação = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\dioge\Documents\Aura Partner\ROX\Gravação Cursos\ROX SCHOOL\Power BI\Power BI - Intermediário\Datasets\base_de_dados_2010_2020_xls\PIB dos Municípios - base de dados 2010-2020.xls"), null, true),
+				    #"Código da Unidade da Federação1" = Fonte{[Name="Código da Unidade da Federação"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Código da Unidade da Federação1", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Código da Unidade da Federação", Int64.Type}, {"Sigla da Unidade da Federação", type text}, {"Nome da Unidade da Federação", type text}}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Tipo Alterado", {"Código da Unidade da Federação"}),
+				    #"Valor Substituído" = Table.ReplaceValue(#"Duplicatas Removidas","Rio de Janeiro","Rio de Janeiro, RJ, BR",Replacer.ReplaceText,{"Nome da Unidade da Federação"}),
+				    #"Valor Substituído1" = Table.ReplaceValue(#"Valor Substituído","São Paulo","São Paulo, BR",Replacer.ReplaceText,{"Nome da Unidade da Federação"})
+				in
+				    #"Valor Substituído1"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

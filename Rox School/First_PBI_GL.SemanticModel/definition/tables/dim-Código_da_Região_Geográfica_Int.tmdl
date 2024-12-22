@@ -1,0 +1,111 @@
+table dim-Código_da_Região_Geográfica_Int
+	lineageTag: 35a8df14-c20d-496f-81d5-c777a6706d95
+
+	column 'Código da Região Geográfica Intermediária'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e4df574-42e6-464c-9252-6c33164a1ebe
+		summarizeBy: none
+		sourceColumn: Código da Região Geográfica Intermediária
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Região Geográfica Intermediária'
+		dataType: string
+		lineageTag: dec2c592-64c2-4cc8-93f5-2bd307dd260d
+		summarizeBy: none
+		sourceColumn: Nome da Região Geográfica Intermediária
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Município da Região Geográfica Intermediária'
+		dataType: string
+		lineageTag: 76b6fbb9-7f61-4868-b484-6bdf87ea9ce6
+		summarizeBy: none
+		sourceColumn: Município da Região Geográfica Intermediária
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Concentração Urbana'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3563aeee-cc28-4d3e-b86d-f540d5b0ae89
+		summarizeBy: none
+		sourceColumn: Código Concentração Urbana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome Concentração Urbana'
+		dataType: string
+		lineageTag: 6786b4bd-a5ee-4931-971f-e0539cb9639d
+		summarizeBy: none
+		sourceColumn: Nome Concentração Urbana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo Concentração Urbana'
+		dataType: string
+		lineageTag: 3120ba39-de76-4d55-9123-101e0e3e7c08
+		summarizeBy: none
+		sourceColumn: Tipo Concentração Urbana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Arranjo Populacional'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d95368f-643a-4709-8b1b-ca4f6df744df
+		summarizeBy: none
+		sourceColumn: Código Arranjo Populacional
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome Arranjo Populacional'
+		dataType: string
+		lineageTag: ec5896c2-c9e3-44c0-9f8b-9c81d1798186
+		summarizeBy: none
+		sourceColumn: Nome Arranjo Populacional
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hierarquia Urbana'
+		dataType: string
+		lineageTag: c31df1ff-da54-44c9-b62e-6800d3bd4ed7
+		summarizeBy: none
+		sourceColumn: Hierarquia Urbana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hierarquia Urbana (principais categorias)'
+		dataType: string
+		lineageTag: 3e70e06d-d1e7-4bd0-8920-842237212865
+		summarizeBy: none
+		sourceColumn: Hierarquia Urbana (principais categorias)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código da Região Rural'
+		dataType: int64
+		formatString: 0
+		lineageTag: 50596a8c-4731-483d-bf54-5846ba70ed93
+		summarizeBy: none
+		sourceColumn: Código da Região Rural
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim-Código_da_Região_Geográfica_Int = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\dioge\Documents\Aura Partner\ROX\Gravação Cursos\ROX SCHOOL\Power BI\Power BI - Intermediário\Datasets\base_de_dados_2010_2020_xls\PIB dos Municípios - base de dados 2010-2020.xls"), null, true),
+				    #"Código da Região Geográfica Int1" = Fonte{[Name="Código da Região Geográfica Int"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Código da Região Geográfica Int1", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Código da Região Geográfica Intermediária", Int64.Type}, {"Nome da Região Geográfica Intermediária", type text}, {"Município da Região Geográfica Intermediária", type text}, {"Código Concentração Urbana", Int64.Type}, {"Nome Concentração Urbana", type text}, {"Tipo Concentração Urbana", type text}, {"Código Arranjo Populacional", Int64.Type}, {"Nome Arranjo Populacional", type text}, {"Hierarquia Urbana", type text}, {"Hierarquia Urbana (principais categorias)", type text}, {"Código da Região Rural", Int64.Type}}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Tipo Alterado", {"Código da Região Geográfica Intermediária"})
+				in
+				    #"Duplicatas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,61 @@
+table dim-Código_da_Microrregião
+	lineageTag: fea9f449-9435-428d-80e7-fb7c5ce9f12d
+
+	column 'Código da Microrregião'
+		dataType: int64
+		formatString: 0
+		lineageTag: f722e3e6-2b86-4f24-bdf9-089a185d2b96
+		summarizeBy: none
+		sourceColumn: Código da Microrregião
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Microrregião'
+		dataType: string
+		lineageTag: 3ea0dfcd-1186-46bc-95b1-1088efef8ba4
+		summarizeBy: none
+		sourceColumn: Nome da Microrregião
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código da Região Geográfica Imediata'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d209dd1-1e24-4f6d-b566-3c33b5cc9364
+		summarizeBy: none
+		sourceColumn: Código da Região Geográfica Imediata
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Região Geográfica Imediata'
+		dataType: string
+		lineageTag: 56e1e9de-6b67-45e3-a09b-33d1e3e0b0ee
+		summarizeBy: none
+		sourceColumn: Nome da Região Geográfica Imediata
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Município da Região Geográfica Imediata'
+		dataType: string
+		lineageTag: 9852bbd4-d589-4775-9d29-70450cf69b17
+		summarizeBy: none
+		sourceColumn: Município da Região Geográfica Imediata
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim-Código_da_Microrregião = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\dioge\Documents\Aura Partner\ROX\Gravação Cursos\ROX SCHOOL\Power BI\Power BI - Intermediário\Datasets\base_de_dados_2010_2020_xls\PIB dos Municípios - base de dados 2010-2020.xls"), null, true),
+				    #"Código da Microrregião1" = Fonte{[Name="Código da Microrregião"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Código da Microrregião1", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Código da Microrregião", Int64.Type}, {"Nome da Microrregião", type text}, {"Código da Região Geográfica Imediata", Int64.Type}, {"Nome da Região Geográfica Imediata", type text}, {"Município da Região Geográfica Imediata", type text}}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Tipo Alterado", {"Código da Microrregião"})
+				in
+				    #"Duplicatas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

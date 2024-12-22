@@ -1,0 +1,17 @@
+expression dim-Calendário-estatico = ```
+		let
+		    
+		    listaDatas  = List.Dates(#date(2020, 01, 01), 180, #duration(1, 0, 0, 0)),
+		    #"Convertido para Tabela" = Table.FromList(listaDatas, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Colunas Renomeadas" = Table.RenameColumns(#"Convertido para Tabela",{{"Column1", "Data"}}),
+		    #"Tipo Alterado" = Table.TransformColumnTypes(#"Colunas Renomeadas",{{"Data", type date}})
+		
+		in
+		    #"Tipo Alterado"
+		```
+	lineageTag: 8aa0d9e6-5df6-4a43-a712-ec55eb3b2e30
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

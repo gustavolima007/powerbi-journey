@@ -1,0 +1,36 @@
+table dim-Código_da_Mesorregião
+	lineageTag: b3fe96da-90fd-40a5-9a1b-d6b2b7a787ad
+
+	column 'Código da Mesorregião'
+		dataType: int64
+		formatString: 0
+		lineageTag: f21dc109-d774-4650-9481-31c629f9a6e8
+		summarizeBy: none
+		sourceColumn: Código da Mesorregião
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Mesorregião'
+		dataType: string
+		lineageTag: 769a0cf1-6db9-4c7a-a680-602c6fb0e298
+		summarizeBy: none
+		sourceColumn: Nome da Mesorregião
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim-Código_da_Mesorregião = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\dioge\Documents\Aura Partner\ROX\Gravação Cursos\ROX SCHOOL\Power BI\Power BI - Intermediário\Datasets\base_de_dados_2010_2020_xls\PIB dos Municípios - base de dados 2010-2020.xls"), null, true),
+				    #"Código da Mesorregião1" = Fonte{[Name="Código da Mesorregião"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Código da Mesorregião1", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Código da Mesorregião", Int64.Type}, {"Nome da Mesorregião", type text}}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Tipo Alterado", {"Código da Mesorregião"})
+				in
+				    #"Duplicatas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,44 @@
+table dim-Código_da_Região_Rural
+	lineageTag: e1d7655c-2ce7-4d77-81df-bb0ed3652a1a
+
+	column 'Código da Região Rural'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c25a93c-94ce-4843-b515-ab37f29e0685
+		summarizeBy: none
+		sourceColumn: Código da Região Rural
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Região Rural'
+		dataType: string
+		lineageTag: 89c1d44e-9544-4929-becf-37605d6e28d2
+		summarizeBy: none
+		sourceColumn: Nome da Região Rural
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Região rural (segundo classificação do núcleo)'
+		dataType: string
+		lineageTag: 4a39a2ae-7919-4c2a-a233-af187a68cc0b
+		summarizeBy: none
+		sourceColumn: Região rural (segundo classificação do núcleo)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim-Código_da_Região_Rural = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\dioge\Documents\Aura Partner\ROX\Gravação Cursos\ROX SCHOOL\Power BI\Power BI - Intermediário\Datasets\base_de_dados_2010_2020_xls\PIB dos Municípios - base de dados 2010-2020.xls"), null, true),
+				    #"Código da Região Rural1" = Fonte{[Name="Código da Região Rural"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Código da Região Rural1", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Código da Região Rural", Int64.Type}, {"Nome da Região Rural", type text}, {"Região rural (segundo classificação do núcleo)", type text}}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Tipo Alterado", {"Código da Região Rural"})
+				in
+				    #"Duplicatas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,42 @@
+relationship 25a921f6-a799-4ac0-b2f8-a63293aa94ec
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim-Calendário-dinamico.Data
+	toColumn: LocalDateTable_143df856-409f-4fb2-b277-3c82799fc36f.Date
+
+relationship cfb3e8e3-5d4a-4a06-aa41-46bb344dea9a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fat-PIB_dos_Municípios.dataAno
+	toColumn: LocalDateTable_59908c4b-fa69-4b27-9367-c8dfaaf5c9dc.Date
+
+relationship 93cc01dd-92e3-4e43-842d-417b66bb52e9
+	fromColumn: fat-PIB_dos_Municípios.'Código da Mesorregião'
+	toColumn: dim-Código_da_Mesorregião.'Código da Mesorregião'
+
+relationship 12e199d4-bfb0-4a8a-9151-a602b0fdda70
+	fromColumn: fat-PIB_dos_Municípios.'Código da Microrregião'
+	toColumn: dim-Código_da_Microrregião.'Código da Microrregião'
+
+relationship 35e0c59b-b59e-4793-ba67-c7a04b6236bd
+	fromColumn: fat-PIB_dos_Municípios.'Código da Região Geográfica Intermediária'
+	toColumn: dim-Código_da_Região_Geográfica_Int.'Código da Região Geográfica Intermediária'
+
+relationship e98b4c7a-2731-485d-a8ad-7e488d5ea616
+	fromColumn: fat-PIB_dos_Municípios.'Código da Região Rural'
+	toColumn: dim-Código_da_Região_Rural.'Código da Região Rural'
+
+relationship d3870249-198e-4a0c-b299-811b776115ae
+	fromColumn: fat-PIB_dos_Municípios.'Código da Unidade da Federação'
+	toColumn: dim-Código_da_Unidade_da_Federação.'Código da Unidade da Federação'
+
+relationship 3a9f4d07-edd0-4f1d-bce2-5073063a6f12
+	fromColumn: fat-PIB_dos_Municípios.'Código do Município'
+	toColumn: dim-Código_do_Município.'Código do Município'
+
+relationship 267ba4d8-6463-4031-b3cf-63798f1b1efd
+	fromColumn: fat-PIB_dos_Municípios.Ano
+	toColumn: 'fat_Valor adicionado bruto total'.Ano
+
+relationship 55187fee-5fa7-4e84-8501-96f47b7a2840
+	fromColumn: dim-Calendário-dinamico.Ano
+	toColumn: 'fat_Valor adicionado bruto total'.Ano
+

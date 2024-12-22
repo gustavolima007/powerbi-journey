@@ -1,0 +1,103 @@
+{
+  "config": "{\"version\":\"5.57\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU08\",\"version\":\"5.57\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "194b3ed96a6a4c7a39cb",
+      "config": "{}",
+      "name": "27d19c3c4ebd393e2577"
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU08",
+            "path": "BaseThemes/CY24SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "194b3ed96a6a4c7a39cb",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1559fc510ba080d7d0c0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":411.42857142857144,\"z\":1000,\"width\":531.4285714285714,\"height\":308.5714285714286,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"treemap\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Vendas.Custo Envio)\"}],\"Group\":[{\"queryRef\":\"Clientes.Mercado\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vendas\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"Clientes\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Custo Envio\"}},\"Function\":0},\"Name\":\"Sum(Vendas.Custo Envio)\",\"NativeReferenceName\":\"Custo Envio\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Mercado\"},\"Name\":\"Clientes.Mercado\",\"NativeReferenceName\":\"Mercado\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 308.57,
+          "width": 531.43,
+          "x": 0.00,
+          "y": 411.43,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"33ce093676170920b0a5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":5000,\"width\":690,\"height\":121.42857142857143,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Dashboard de vendas, custo, margem de lucro e KPI\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Georgia\",\"fontSize\":\"14pt\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Curso: DSA Power BI\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"14pt\"}}]},{\"textRuns\":[{\"value\":\"Data: 20/10/2024\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"14pt\"}}]},{\"textRuns\":[{\"value\":\"Gustavo Lima - Versão 1.1\",\"textStyle\":{\"fontFamily\":\"Georgia\",\"fontSize\":\"14pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 121.43,
+          "width": 690.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"4179c970a2901596106c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1000.0000000000001,\"y\":148.57142857142858,\"z\":2000,\"width\":280,\"height\":262.8571428571429,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"gauge\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Vendas.Valor Venda)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vendas\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Valor Venda\"}},\"Function\":1},\"Name\":\"Sum(Vendas.Valor Venda)\",\"NativeReferenceName\":\"Média de Valor Venda\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Valor Venda\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"axis\":[{\"properties\":{\"min\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"max\":{\"expr\":{\"Literal\":{\"Value\":\"500D\"}}},\"target\":{\"expr\":{\"Literal\":{\"Value\":\"350D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 262.86,
+          "width": 280.00,
+          "x": 1000.00,
+          "y": 148.57,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"460edb5726e5a701105c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":477.14285714285717,\"y\":144.2857142857143,\"z\":0,\"width\":501.42857142857144,\"height\":267.14285714285717,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"waterfallChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Vendas.Valor Venda)\"}],\"Category\":[{\"queryRef\":\"Pedidos.Modo Envio\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"v\",\"Entity\":\"Vendas\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Pedidos\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Valor Venda\"}},\"Function\":0},\"Name\":\"Sum(Vendas.Valor Venda)\",\"NativeReferenceName\":\"Soma de Valor Venda1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Modo Envio\"},\"Name\":\"Pedidos.Modo Envio\",\"NativeReferenceName\":\"Modo Envio\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Valor Venda\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 267.14,
+          "width": 501.43,
+          "x": 477.14,
+          "y": 144.29,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"49048abf6b832d81da2b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":144.2857142857143,\"z\":4000,\"width\":477.14285714285717,\"height\":267.14285714285717,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Produtos.Categoria\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Vendas.Lucro)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Produtos\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"Vendas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Categoria\"},\"Name\":\"Produtos.Categoria\",\"NativeReferenceName\":\"Categoria\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Lucro\"}},\"Function\":1},\"Name\":\"Sum(Vendas.Lucro)\",\"NativeReferenceName\":\"Média de Lucro\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"Lucro\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 267.14,
+          "width": 477.14,
+          "x": 0.00,
+          "y": 144.29,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"a753d6a048383c7a6580\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1000.0000000000001,\"y\":0,\"z\":3000,\"width\":280,\"height\":144.2857142857143,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Ano\",\"active\":true},{\"queryRef\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Mês\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pedidos\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Name\":\"Variation\",\"Property\":\"Data Pedido\"}},\"Hierarchy\":\"Hierarquia de datas\"}},\"Level\":\"Ano\"},\"Name\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Ano\",\"NativeReferenceName\":\"Data Pedido Ano\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Name\":\"Variation\",\"Property\":\"Data Pedido\"}},\"Hierarchy\":\"Hierarquia de datas\"}},\"Level\":\"Mês\"},\"Name\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Mês\",\"NativeReferenceName\":\"Data Pedido Mês\"}]},\"expansionStates\":[{\"roles\":[\"Values\"],\"levels\":[{\"queryRefs\":[\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Ano\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"LocalDateTable_45fd8a7c-0a15-47b5-995a-425c0b83425c\"}},\"Property\":\"Ano\"}}],\"isPinned\":true},{\"queryRefs\":[\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Mês\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"2014L\"}}],\"isToggled\":true}]}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 144.29,
+          "width": 280.00,
+          "x": 1000.00,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"aa09447c996d100010ad\",\"layouts\":[{\"id\":0,\"position\":{\"x\":531.4285714285714,\"y\":411.42857142857144,\"z\":6000,\"width\":748.5714285714287,\"height\":308.5714285714286,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Ano\",\"active\":true},{\"queryRef\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Trimestre\"},{\"queryRef\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Mês\"},{\"queryRef\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Dia\"}],\"Y\":[{\"queryRef\":\"Sum(Vendas.MargemLucro)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pedidos\",\"Type\":0},{\"Name\":\"v\",\"Entity\":\"Vendas\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Name\":\"Variation\",\"Property\":\"Data Pedido\"}},\"Hierarchy\":\"Hierarquia de datas\"}},\"Level\":\"Ano\"},\"Name\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Ano\",\"NativeReferenceName\":\"Data Pedido Ano\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Name\":\"Variation\",\"Property\":\"Data Pedido\"}},\"Hierarchy\":\"Hierarquia de datas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Trimestre\",\"NativeReferenceName\":\"Data Pedido Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Name\":\"Variation\",\"Property\":\"Data Pedido\"}},\"Hierarchy\":\"Hierarquia de datas\"}},\"Level\":\"Mês\"},\"Name\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Mês\",\"NativeReferenceName\":\"Data Pedido Mês\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Name\":\"Variation\",\"Property\":\"Data Pedido\"}},\"Hierarchy\":\"Hierarquia de datas\"}},\"Level\":\"Dia\"},\"Name\":\"Pedidos.Data Pedido.Variation.Hierarquia de datas.Dia\",\"NativeReferenceName\":\"Data Pedido Dia\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"v\"}},\"Property\":\"MargemLucro\"}},\"Function\":1},\"Name\":\"Sum(Vendas.MargemLucro)\",\"NativeReferenceName\":\"Média de MargemLucro\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 308.57,
+          "width": 748.57,
+          "x": 531.43,
+          "y": 411.43,
+          "z": 6000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

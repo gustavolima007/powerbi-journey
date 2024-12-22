@@ -1,0 +1,73 @@
+table Medidas
+	lineageTag: 7bbd55ab-6223-48c5-8ddc-37eda6999dbb
+
+	measure PIB =
+			
+			CALCULATE(
+			    SUM(
+			        'fat-PIB_dos_Municípios'[Produto Interno Bruto, a preços correntes(R$ 1.000)]
+			    )
+			)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		lineageTag: 7cc3c7cb-6c4e-4d66-8fb3-b4d36c51d315
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Valor Adicionado Bruto - Agropecuária' =
+			
+			CALCULATE(
+			    SUM(
+			        'fat-PIB_dos_Municípios'[Valor adicionado bruto da Agropecuária, a preços correntes(R$ 1.000)]
+			    )
+			)
+		formatString: 0
+		lineageTag: 958b56d8-719c-42ca-91d3-2c79fcd3145d
+
+	measure 'Valor Adicionado Bruto - Indústrias' =
+			
+			CALCULATE(
+			    SUM(
+			        'fat-PIB_dos_Municípios'[Valor adicionado bruto da Indústria,a preços correntes(R$ 1.000)]
+			    )
+			)
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		lineageTag: beac1c1d-ed34-468a-a121-5236c62da86a
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Meta KPI - PIB' =
+			
+			CALCULATE( 100000 )
+		formatString: 0
+		lineageTag: 3227d111-8c26-4cbd-8c79-9c4e3cc8c87e
+
+	measure 'Meta KPI - PIB - Tab' =
+			
+			CALCULATE(
+			    SUM(
+			        'fat-PIB_dos_Municípios'[Meta PIB]
+			    )
+			)
+		formatString: 0
+		lineageTag: 7a2b84e1-88e5-48e1-abb8-cc3e041e1135
+
+	measure 'Quantidade Ano analise' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('fat-PIB_dos_Municípios'[dataAno].[Ano])
+			)
+		formatString: 0
+		lineageTag: 78a15a80-5db7-4859-9864-73b37e67b433
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}}),
+				    #"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"Coluna 1"})
+				in
+				    #"Colunas Removidas"
+
+	annotation PBI_ResultType = Table
+

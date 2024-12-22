@@ -1,0 +1,44 @@
+table dim-Código_do_Município
+	lineageTag: bde6615a-435d-4410-b64d-1c041fd085de
+
+	column 'Código do Município'
+		dataType: int64
+		formatString: 0
+		lineageTag: ea0fba46-4682-47a3-a1ab-5b3a1e18a91b
+		summarizeBy: none
+		sourceColumn: Código do Município
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Município'
+		dataType: string
+		lineageTag: d64f9a43-0780-4356-ae33-6af0ae3fc571
+		summarizeBy: none
+		sourceColumn: Nome do Município
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Região Metropolitana'
+		dataType: string
+		lineageTag: 27fc0435-5245-40be-8554-933310b92878
+		summarizeBy: none
+		sourceColumn: Região Metropolitana
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim-Código_do_Município = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\dioge\Documents\Aura Partner\ROX\Gravação Cursos\ROX SCHOOL\Power BI\Power BI - Intermediário\Datasets\base_de_dados_2010_2020_xls\PIB dos Municípios - base de dados 2010-2020.xls"), null, true),
+				    #"Código do Município1" = Fonte{[Name="Código do Município"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Código do Município1", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Código do Município", Int64.Type}, {"Nome do Município", type text}, {"Região Metropolitana", type text}}),
+				    #"Duplicatas Removidas" = Table.Distinct(#"Tipo Alterado", {"Código do Município"})
+				in
+				    #"Duplicatas Removidas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

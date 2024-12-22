@@ -1,0 +1,152 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 122.8448827684735
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 171.98283587586292,
+            "y": 477.56806382450924
+          },
+          "nodeIndex": "dim-Código_da_Mesorregião",
+          "nodeLineageTag": "b3fe96da-90fd-40a5-9a1b-d6b2b7a787ad",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1084.0272990296837,
+            "y": 364.7900120942133
+          },
+          "nodeIndex": "dim-Código_da_Microrregião",
+          "nodeLineageTag": "fea9f449-9435-428d-80e7-fb7c5ce9f12d",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 0
+          },
+          "nodeIndex": "dim-Código_da_Região_Geográfica_Int",
+          "nodeLineageTag": "35a8df14-c20d-496f-81d5-c777a6706d95",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 891.92458689975388,
+            "y": 166.13366207635511
+          },
+          "nodeIndex": "dim-Código_da_Região_Rural",
+          "nodeLineageTag": "e1d7655c-2ce7-4d77-81df-bb0ed3652a1a",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 286.83474786292709,
+            "y": 127.74463621120714
+          },
+          "nodeIndex": "dim-Código_da_Unidade_da_Federação",
+          "nodeLineageTag": "6b729ce9-b3c3-4f55-9854-ca137b67c5c7",
+          "size": {
+            "height": 147.39331689618223,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 922.47822478768239,
+            "y": 800.32036936859959
+          },
+          "nodeIndex": "dim-Código_do_Município",
+          "nodeLineageTag": "bde6615a-435d-4410-b64d-1c041fd085de",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 579.96932266846761,
+            "y": 443.77713900111053
+          },
+          "nodeIndex": "fat-PIB_dos_Municípios",
+          "nodeLineageTag": "8dc88d8f-b58e-45e7-8faa-34d47e7be90b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 276.15656565056241,
+            "y": 711.14470971108722
+          },
+          "nodeIndex": "dim-Calendário-dinamico",
+          "nodeLineageTag": "a9ade62b-ca5f-41e8-8baf-b37d90274604",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1315.8182238530824,
+            "y": 644.08646073497812
+          },
+          "nodeIndex": "fat_Valor adicionado bruto total",
+          "nodeLineageTag": "55fabd4b-ec8b-4fa9-9c62-0a324b9fccab",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1377.161873835224,
+            "y": 17.293070338915982
+          },
+          "nodeIndex": "Medidas",
+          "nodeLineageTag": "7bbd55ab-6223-48c5-8ddc-37eda6999dbb",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 65.122777764195916,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

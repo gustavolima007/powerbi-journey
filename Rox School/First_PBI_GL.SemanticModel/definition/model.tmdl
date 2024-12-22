@@ -1,0 +1,32 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["dim-Código_da_Mesorregião","dim-Código_da_Microrregião","dim-Código_da_Região_Geográfica_Int","dim-Código_da_Região_Rural","dim-Código_da_Unidade_da_Federação","dim-Código_do_Município","fat-PIB_dos_Municípios","dim-Calendário-estatico","dim-Calendário-dinamico","fat_Valor adicionado bruto total","Medidas"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.138.1452.0 (24.11)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_14b2e969-f990-4a47-8451-96d41adc07c2
+ref table dim-Código_da_Mesorregião
+ref table dim-Código_da_Microrregião
+ref table dim-Código_da_Região_Geográfica_Int
+ref table dim-Código_da_Região_Rural
+ref table dim-Código_da_Unidade_da_Federação
+ref table dim-Código_do_Município
+ref table fat-PIB_dos_Municípios
+ref table dim-Calendário-dinamico
+ref table LocalDateTable_143df856-409f-4fb2-b277-3c82799fc36f
+ref table LocalDateTable_59908c4b-fa69-4b27-9367-c8dfaaf5c9dc
+ref table 'fat_Valor adicionado bruto total'
+ref table Medidas
+
+ref cultureInfo pt-BR
+

@@ -1,0 +1,417 @@
+table fat-PIB_dos_Municípios
+	lineageTag: 8dc88d8f-b58e-45e7-8faa-34d47e7be90b
+
+	column Ano
+		dataType: int64
+		formatString: 0
+		lineageTag: d26074cd-5c66-4df7-ae69-17cea39631af
+		summarizeBy: none
+		sourceColumn: Ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código da Grande Região'
+		dataType: int64
+		formatString: 0
+		lineageTag: 00cbe578-4bd1-471c-b5bc-07c5e36e1bd1
+		summarizeBy: sum
+		sourceColumn: Código da Grande Região
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Grande Região'
+		dataType: string
+		lineageTag: 73a3d435-22bc-46ce-b461-5ab79bba17b0
+		summarizeBy: none
+		sourceColumn: Nome da Grande Região
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código da Unidade da Federação'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0d4e1dc4-9417-4250-8c26-bc821a0b9a9b
+		summarizeBy: none
+		sourceColumn: Código da Unidade da Federação
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sigla da Unidade da Federação'
+		dataType: string
+		lineageTag: f9b8b9ae-f326-4e36-8259-7895639690c8
+		summarizeBy: none
+		sourceColumn: Sigla da Unidade da Federação
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Unidade da Federação'
+		dataType: string
+		lineageTag: ef2c3cb2-de1b-4614-b39b-8d4b0ac1268b
+		summarizeBy: none
+		sourceColumn: Nome da Unidade da Federação
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código do Município'
+		dataType: int64
+		formatString: 0
+		lineageTag: 68438e56-8134-4c9b-be4a-1b39991b814d
+		summarizeBy: none
+		sourceColumn: Código do Município
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Município'
+		dataType: string
+		lineageTag: f74461fb-37cd-4df3-8691-1674c1924441
+		summarizeBy: none
+		sourceColumn: Nome do Município
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Região Metropolitana'
+		dataType: string
+		lineageTag: 28d36929-eb99-4e45-b68c-4ac77128be52
+		summarizeBy: none
+		sourceColumn: Região Metropolitana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código da Mesorregião'
+		dataType: int64
+		formatString: 0
+		lineageTag: 77877b15-b3d9-45ac-a375-bcda5e9adf38
+		summarizeBy: none
+		sourceColumn: Código da Mesorregião
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Mesorregião'
+		dataType: string
+		lineageTag: 7778298e-c3b9-4844-b0c5-9bd228791873
+		summarizeBy: none
+		sourceColumn: Nome da Mesorregião
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código da Microrregião'
+		dataType: int64
+		formatString: 0
+		lineageTag: c230718c-b5a4-4833-b82e-eb699ce55277
+		summarizeBy: none
+		sourceColumn: Código da Microrregião
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Microrregião'
+		dataType: string
+		lineageTag: ccd824fc-7ada-4a61-917a-a50c234b528b
+		summarizeBy: none
+		sourceColumn: Nome da Microrregião
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código da Região Geográfica Imediata'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b9892fc-6800-42cc-b0bd-9099c5460254
+		summarizeBy: sum
+		sourceColumn: Código da Região Geográfica Imediata
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Região Geográfica Imediata'
+		dataType: string
+		lineageTag: 9dd5190d-510c-48a6-b81f-ca6fd3553c96
+		summarizeBy: none
+		sourceColumn: Nome da Região Geográfica Imediata
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Município da Região Geográfica Imediata'
+		dataType: string
+		lineageTag: dba33afa-d12c-4da2-a083-570991f1b5d9
+		summarizeBy: none
+		sourceColumn: Município da Região Geográfica Imediata
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código da Região Geográfica Intermediária'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b4992ec-5b3a-490f-bb17-266a5cca55fb
+		summarizeBy: none
+		sourceColumn: Código da Região Geográfica Intermediária
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Região Geográfica Intermediária'
+		dataType: string
+		lineageTag: 125e3ce9-02ba-47e6-825f-3c1122f02248
+		summarizeBy: none
+		sourceColumn: Nome da Região Geográfica Intermediária
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Município da Região Geográfica Intermediária'
+		dataType: string
+		lineageTag: b15875e6-9f89-4de0-8833-fec4a326360f
+		summarizeBy: none
+		sourceColumn: Município da Região Geográfica Intermediária
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Concentração Urbana'
+		dataType: int64
+		formatString: 0
+		lineageTag: d1847156-e907-4a00-88d6-720ddc2e31c3
+		summarizeBy: sum
+		sourceColumn: Código Concentração Urbana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome Concentração Urbana'
+		dataType: string
+		lineageTag: 5f41763f-ba78-43b8-9b29-3ee5ba8e5555
+		summarizeBy: none
+		sourceColumn: Nome Concentração Urbana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo Concentração Urbana'
+		dataType: string
+		lineageTag: cc73d652-9d4f-44e3-9e53-f9cf7195198f
+		summarizeBy: none
+		sourceColumn: Tipo Concentração Urbana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código Arranjo Populacional'
+		dataType: int64
+		formatString: 0
+		lineageTag: bc39e482-b25f-484c-89e5-f1c593c57ef9
+		summarizeBy: sum
+		sourceColumn: Código Arranjo Populacional
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome Arranjo Populacional'
+		dataType: string
+		lineageTag: 644df476-ab38-48e5-a240-80c2aee90c56
+		summarizeBy: none
+		sourceColumn: Nome Arranjo Populacional
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hierarquia Urbana'
+		dataType: string
+		lineageTag: d8c9c121-ddfb-4092-b06a-60f2543ca294
+		summarizeBy: none
+		sourceColumn: Hierarquia Urbana
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hierarquia Urbana (principais categorias)'
+		dataType: string
+		lineageTag: 78dbee89-bb7b-4a2c-a8ee-a17fdcdded9f
+		summarizeBy: none
+		sourceColumn: Hierarquia Urbana (principais categorias)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código da Região Rural'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d9e0aba-acce-48af-8fb2-2b6947af9ea3
+		summarizeBy: none
+		sourceColumn: Código da Região Rural
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome da Região Rural'
+		dataType: string
+		lineageTag: 484ae2c0-bb2f-4c6f-a519-63dcb52af38f
+		summarizeBy: none
+		sourceColumn: Nome da Região Rural
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Região rural (segundo classificação do núcleo)'
+		dataType: string
+		lineageTag: 251985bc-a001-49bd-a00d-7247823cec71
+		summarizeBy: none
+		sourceColumn: Região rural (segundo classificação do núcleo)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amazônia Legal'
+		dataType: string
+		lineageTag: fd349e10-bd0b-4e6b-8fe1-0c57e4fab681
+		summarizeBy: none
+		sourceColumn: Amazônia Legal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Semiárido
+		dataType: string
+		lineageTag: 8a820a6a-5456-4f9d-a599-2f2cd027d82b
+		summarizeBy: none
+		sourceColumn: Semiárido
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cidade-Região de São Paulo'
+		dataType: string
+		lineageTag: e8f841c0-2d6b-455c-bd04-cecdd9237060
+		summarizeBy: none
+		sourceColumn: Cidade-Região de São Paulo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor adicionado bruto da Agropecuária, a preços correntes(R$ 1.000)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 974524f8-be9b-41dc-80c8-320d790f3164
+		summarizeBy: sum
+		sourceColumn: Valor adicionado bruto da Agropecuária, a preços correntes(R$ 1.000)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor adicionado bruto da Indústria,a preços correntes(R$ 1.000)'
+		dataType: int64
+		formatString: 0
+		lineageTag: aaa94e6f-000c-4e40-8ce4-f8aba2b181b1
+		summarizeBy: sum
+		sourceColumn: Valor adicionado bruto da Indústria,a preços correntes(R$ 1.000)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor adicionado bruto dos Serviços,a preços correntes - exceto Administração, defesa, educação e saúde públicas e seguridade social(R$ 1.000)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 03258a68-cabb-4e1d-9a65-a2d229230fed
+		summarizeBy: sum
+		sourceColumn: Valor adicionado bruto dos Serviços,a preços correntes - exceto Administração, defesa, educação e saúde públicas e seguridade social(R$ 1.000)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor adicionado bruto da Administração, defesa, educação e saúde públicas e seguridade social, a preços correntes(R$ 1.000)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 76e03eae-1b7c-434e-9b30-e3ed47dbd167
+		summarizeBy: sum
+		sourceColumn: Valor adicionado bruto da Administração, defesa, educação e saúde públicas e seguridade social, a preços correntes(R$ 1.000)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor adicionado bruto total, a preços correntes(R$ 1.000)'
+		dataType: int64
+		formatString: 0
+		lineageTag: d05cfe45-0e88-4a4c-b389-625b5d23af78
+		summarizeBy: sum
+		sourceColumn: Valor adicionado bruto total, a preços correntes(R$ 1.000)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Impostos, líquidos de subsídios, sobre produtos, a preços correntes(R$ 1.000)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 65d69211-1ff3-475e-a057-6406de878a67
+		summarizeBy: sum
+		sourceColumn: Impostos, líquidos de subsídios, sobre produtos, a preços correntes(R$ 1.000)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Produto Interno Bruto, a preços correntes(R$ 1.000)'
+		dataType: int64
+		formatString: 0
+		lineageTag: ab326974-fad5-4735-9b6e-7b9dfbc983ae
+		summarizeBy: sum
+		sourceColumn: Produto Interno Bruto, a preços correntes(R$ 1.000)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Produto Interno Bruto per capita, a preços correntes(R$ 1,00)'
+		dataType: double
+		lineageTag: ff1a58c6-25ec-4049-9fa7-0189a19f4c75
+		summarizeBy: sum
+		sourceColumn: Produto Interno Bruto per capita, a preços correntes(R$ 1,00)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Atividade com maior valor adicionado bruto'
+		dataType: string
+		lineageTag: 97c4665e-6357-4488-8b19-0c90e2071802
+		summarizeBy: none
+		sourceColumn: Atividade com maior valor adicionado bruto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Atividade com segundo maior valor adicionado bruto'
+		dataType: string
+		lineageTag: 5dd05474-cd7f-485d-b13a-bab3eda3bded
+		summarizeBy: none
+		sourceColumn: Atividade com segundo maior valor adicionado bruto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Atividade com terceiro maior valor adicionado bruto'
+		dataType: string
+		lineageTag: 5568c2ba-da0c-4ac8-b4fa-a6322bf418f1
+		summarizeBy: none
+		sourceColumn: Atividade com terceiro maior valor adicionado bruto
+
+		annotation SummarizationSetBy = Automatic
+
+	column dataAno
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4e1b4a9d-ab9f-45b7-8d66-abec38bc85c2
+		summarizeBy: none
+		sourceColumn: dataAno
+
+		variation Variation
+			isDefault
+			relationship: cfb3e8e3-5d4a-4a06-aa41-46bb344dea9a
+			defaultHierarchy: LocalDateTable_59908c4b-fa69-4b27-9367-c8dfaaf5c9dc.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'analise 01'
+		dataType: string
+		lineageTag: 188d16c8-2bfd-4b20-bb1a-c6cfe7fc73c1
+		summarizeBy: none
+		sourceColumn: analise 01
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Meta PIB' = 100000
+		formatString: 0
+		lineageTag: f3c8fc00-98ab-4277-9e70-c8a39727db5e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fat-PIB_dos_Municípios = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\dioge\Documents\Aura Partner\ROX\Gravação Cursos\ROX SCHOOL\Power BI\Power BI - Intermediário\Datasets\base_de_dados_2010_2020_xls\PIB dos Municípios - base de dados 2010-2020.xls"), null, true),
+				    #"PIB dos Municípios1" = Fonte{[Name="PIB dos Municípios"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"PIB dos Municípios1", [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Ano", Int64.Type}, {"Código da Grande Região", Int64.Type}, {"Nome da Grande Região", type text}, {"Código da Unidade da Federação", Int64.Type}, {"Sigla da Unidade da Federação", type text}, {"Nome da Unidade da Federação", type text}, {"Código do Município", Int64.Type}, {"Nome do Município", type text}, {"Região Metropolitana", type text}, {"Código da Mesorregião", Int64.Type}, {"Nome da Mesorregião", type text}, {"Código da Microrregião", Int64.Type}, {"Nome da Microrregião", type text}, {"Código da Região Geográfica Imediata", Int64.Type}, {"Nome da Região Geográfica Imediata", type text}, {"Município da Região Geográfica Imediata", type text}, {"Código da Região Geográfica Intermediária", Int64.Type}, {"Nome da Região Geográfica Intermediária", type text}, {"Município da Região Geográfica Intermediária", type text}, {"Código Concentração Urbana", Int64.Type}, {"Nome Concentração Urbana", type text}, {"Tipo Concentração Urbana", type text}, {"Código Arranjo Populacional", Int64.Type}, {"Nome Arranjo Populacional", type text}, {"Hierarquia Urbana", type text}, {"Hierarquia Urbana (principais categorias)", type text}, {"Código da Região Rural", Int64.Type}, {"Nome da Região Rural", type text}, {"Região rural (segundo classificação do núcleo)", type text}, {"Amazônia Legal", type text}, {"Semiárido", type text}, {"Cidade-Região de São Paulo", type text}, {"Valor adicionado bruto da Agropecuária, #(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Valor adicionado bruto da Indústria,#(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Valor adicionado bruto dos Serviços,#(lf)a preços correntes #(lf)- exceto Administração, defesa, educação e saúde públicas e seguridade social#(lf)(R$ 1.000)", Int64.Type}, {"Valor adicionado bruto da Administração, defesa, educação e saúde públicas e seguridade social, #(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Valor adicionado bruto total, #(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Impostos, líquidos de subsídios, sobre produtos, #(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Produto Interno Bruto, #(lf)a preços correntes#(lf)(R$ 1.000)", Int64.Type}, {"Produto Interno Bruto per capita, #(lf)a preços correntes#(lf)(R$ 1,00)", type number}, {"Atividade com maior valor adicionado bruto", type text}, {"Atividade com segundo maior valor adicionado bruto", type text}, {"Atividade com terceiro maior valor adicionado bruto", type text}}),
+				    #"Erros Removidos" = Table.RemoveRowsWithErrors(#"Tipo Alterado", {"Valor adicionado bruto da Agropecuária, #(lf)a preços correntes#(lf)(R$ 1.000)"}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Erros Removidos", "dataAno", each #date([Ano],01,01)),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"dataAno", type date}}),
+				    #"Coluna Condicional Adicionada" = Table.AddColumn(#"Tipo Alterado1", "analise 01", each if [Nome da Grande Região] = "Nordeste" and [Município da Região Geográfica Imediata] = "Polo" and [Município da Região Geográfica Intermediária] = "do Entorno" then "Analise 01 - OK" else "Não OK")
+				in
+				    #"Coluna Condicional Adicionada"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,26 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Clientes","Pedidos","Produtos","Vendas"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.138.1452.0 (24.11)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Clientes
+ref table DateTableTemplate_0ddb4af0-7f1d-4704-847a-e5f1287f439f
+ref table Pedidos
+ref table LocalDateTable_45fd8a7c-0a15-47b5-995a-425c0b83425c
+ref table LocalDateTable_6d5e5bc9-6381-4f35-a2b6-ec94d5a539b5
+ref table Produtos
+ref table Vendas
+
+ref cultureInfo pt-BR
+
